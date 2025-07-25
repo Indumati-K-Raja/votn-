@@ -8,7 +8,7 @@ export default function Activities() {
       title: "Women Empowerment Through Education",
       description:
         "Providing scholarships, skill development programs, and entrepreneurship training to empower women across Tamil Nadu.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/wom-emp.jpg?height=300&width=400",
       link: "/blog/women-empowerment",
     },
     {
@@ -16,7 +16,7 @@ export default function Activities() {
       title: "Digital Inclusion Initiative",
       description:
         "Setting up Digital Resource Centers and conducting workshops to bridge the digital divide in rural communities.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/dig-inc.jpg?height=300&width=400",
       link: "/blog/digital-inclusion",
     },
     {
@@ -24,7 +24,7 @@ export default function Activities() {
       title: "Sustainable Development Programs",
       description:
         "Tree plantation drives, water conservation projects, and eco-friendly initiatives for environmental protection.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/sust-dev.jpg?height=300&width=400",
       link: "/blog/sustainable-development",
     },
   ]

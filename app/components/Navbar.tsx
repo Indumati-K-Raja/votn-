@@ -35,21 +35,18 @@ export default function Navbar() {
     { name: "Blog", href: "/blog" },
     {
       name: "Events",
-      href: "/events",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "All Events", href: "/events" },
-        { name: "Event Calendar", href: "/events" },
-      ],
+      href: "/events?filter=upcoming",
+     
+     
     },
     {
       name: "Partnership",
       href: "/partnership",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Join Our Mission", href: "/partnership" },
-        { name: "Volunteer With Us", href: "/partnership" },
-        { name: "Corporate Partnership", href: "/partnership" },
+        { name: "Volunteer With Us", href: "/partnership?filter=volunteer"},
+        { name: "Corporate Partnership", href: "/partnership?filter=corporate"},
+        { name: "Join Our Mission", href: "/partnership?filter=mission" },
       ],
     },
     {
@@ -79,7 +76,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="Voice of Tamilnadu" width={120} height={40} className="h-10 w-auto" />
+            <Image src="/logo.png" alt="Voice of Tamilnadu" width={220} height={74} className="h-20 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

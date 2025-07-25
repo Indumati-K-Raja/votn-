@@ -8,7 +8,7 @@ export default function BlogPage() {
       title: "Women Empowerment Through Education and Skill Development",
       excerpt:
         "Education is the foundation of empowerment. When women have access to quality education and skill development, they gain independence, confidence, and the ability to contribute to society.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/wom-emp2.jpg?height=300&width=500",
       author: "Voice of Tamilnadu Team",
       date: "2024-01-15",
       category: "Education",
@@ -18,7 +18,7 @@ export default function BlogPage() {
       title: "Sustainable Development and Environmental Protection in Tamil Nadu",
       excerpt:
         "Sustainability is not just about protecting the environment—it's about creating a future where people and nature can thrive together. In Tamil Nadu, we face significant environmental challenges.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/sust-dev2.jpg?height=300&width=500",
       author: "Voice of Tamilnadu Team",
       date: "2024-01-10",
       category: "Environment",
@@ -28,7 +28,7 @@ export default function BlogPage() {
       title: "Strengthening Rural Communities Through Digital Inclusion",
       excerpt:
         "In today's digital world, access to technology is crucial for growth. Yet, many rural communities in Tamil Nadu lack the necessary digital skills and infrastructure.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/dig-inc2.jpg?height=300&width=500",
       author: "Voice of Tamilnadu Team",
       date: "2024-01-05",
       category: "Technology",

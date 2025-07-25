@@ -12,26 +12,17 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 gradient-bg">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/30 via-red-600/30 to-yellow-500/30"></div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-400/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-green-400/20 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-12 h-12 bg-purple-400/20 rounded-full animate-bounce"></div>
-      </div>
-
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/bg-img.png')" }}
+    >
+      {/* Overlay for darkening the image, optional */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl text-white-900 lg:text-7xl font-bold mb-6 leading-tight">
             Shaping the Future:
             <span className="block text-yellow-300 animate-pulse">Together for Change</span>
           </h1>

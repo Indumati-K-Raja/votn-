@@ -61,7 +61,7 @@ const blogPosts = {
     `,
     author: "Voice of Tamilnadu Team",
     date: "2024-01-10",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "/wom-emp2.jpg?height=400&width=800",
   },
   "digital-inclusion": {
     title: "Strengthening Rural Communities Through Digital Inclusion",
