@@ -6,6 +6,7 @@ import type { ReactElement } from "react"
 import { useState } from "react"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { Users, Building, Code, Megaphone, Calendar, Handshake, Sparkles, ArrowRight, Star } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function PartnershipPage(): ReactElement {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ export default function PartnershipPage(): ReactElement {
     interest: "",
     message: "",
   })
+
+  const router = useRouter();
 
   const { scrollY } = useScroll()
   const y1 = useTransform(scrollY, [0, 300], [0, -50])
@@ -269,20 +272,21 @@ export default function PartnershipPage(): ReactElement {
                   transition={{ duration: 0.8, delay: 1 }}
                 >
                   <motion.button
-                    className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg flex items-center space-x-2 group"
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.3)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg flex items-center space-x-2 group"
+                  whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push('/contact#contact-form')}
                   >
-                    <span>Start Partnership</span>
-                    <motion.div
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.div>
+                  <span>Start Partnership</span>
+                  <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                  <ArrowRight className="w-5 h-5" />
+                  </motion.div>
                   </motion.button>
                 </motion.div>
               </div>
