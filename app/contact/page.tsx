@@ -78,7 +78,7 @@ export default function ContactPage() {
       icon: <Users className="w-8 h-8" />,
       title: "Join Our Team",
       description: "Become a volunteer and make a difference",
-      link: "/partnership",
+      link: "/volunteer#volunteer-forms",
       color: "from-orange-500 to-red-500",
     },
     {

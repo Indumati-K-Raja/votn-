@@ -1,7 +1,21 @@
+"use client"
 import { Users, Handshake, Megaphone, Heart, Shield, Lightbulb } from "lucide-react"
 import Stats from "../components/Stats"
+import { useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 
 export default function AboutPage() {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const filter = searchParams.get("filter");
+    if (filter === "role" || filter === "goals") {
+      const section = document.getElementById(filter);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [searchParams]);
+
   const roles = [
     {
       icon: <Megaphone className="w-8 h-8" />,

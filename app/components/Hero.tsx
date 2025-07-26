@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
+import { Mouse } from "lucide-react"
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -48,9 +48,20 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown size={32} className="text-white/70" />
-        </div>
+        <button
+          type="button"
+          aria-label="Scroll down"
+          onClick={() => {
+            const el = document.getElementById("objectives");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="relative mt-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center group focus:outline-none"
+        >
+          <Mouse size={38} className="text-white/80 drop-shadow-lg animate-bounce group-hover:scale-110 group-active:scale-95 group-hover:yellow-300 " />
+          <span className="block w-2 h-2 mt-2 rounded-full bg-white/80 animate-bounce group-hover:bg-yellow-300 transition-colors " />
+        </button>
       </div>
     </section>
   )

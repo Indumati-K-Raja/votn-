@@ -25,7 +25,6 @@ export default function Navbar() {
         setActiveDropdown(null)
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
@@ -36,17 +35,15 @@ export default function Navbar() {
     {
       name: "Events",
       href: "/events?filter=upcoming",
-     
-     
     },
     {
       name: "Partnership",
       href: "/partnership",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Volunteer With Us", href: "/partnership?filter=volunteer"},
-        { name: "Corporate Partnership", href: "/partnership?filter=corporate"},
-        { name: "Join Our Mission", href: "/partnership?filter=mission" },
+        { name: "Volunteer With Us", href: "/volunteer?filter=volunteer" },
+        { name: "Corporate Partnership", href: "/partnership?filter=corporate" },
+        { name: "Join Our Mission", href: "/volunteer#volunteer-forms" },
       ],
     },
     {
@@ -55,7 +52,7 @@ export default function Navbar() {
       hasDropdown: true,
       dropdownItems: [
         { name: "About Us", href: "/about" },
-        { name: "Our Mission", href: "/about" },
+        { name: "Our Mission", href: "/about?filter=goals" },
         { name: "Our Impact", href: "/blog" },
       ],
     },
@@ -69,10 +66,13 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
+        isScrolled ? "bg-white shadow-2xl" : "bg-white/95 backdrop-blur-sm shadow-lg"
       }`}
       ref={dropdownRef}
     >
+      {/* Enhanced shadow effect */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
@@ -96,10 +96,9 @@ export default function Navbar() {
                         }`}
                       />
                     </button>
-
-                    {/* Dropdown Menu */}
+                    {/* Dropdown Menu with enhanced shadow */}
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 animate-fade-in">
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl border border-gray-100 py-2 z-50 animate-fade-in">
                         {item.dropdownItems?.map((dropdownItem, index) => (
                           <Link
                             key={index}
@@ -124,7 +123,7 @@ export default function Navbar() {
               </div>
             ))}
             <Link
-              href="/partnership"
+              href="/volunteer#volunteer-forms"
               className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-200"
             >
               Join Us
@@ -139,10 +138,10 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation with shadow */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+          <div className="md:hidden shadow-xl">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
               {navItems.map((item) => (
                 <div key={item.name}>
                   {item.hasDropdown ? (
@@ -188,7 +187,7 @@ export default function Navbar() {
                 </div>
               ))}
               <Link
-                href="/partnership"
+                href="/volunteer#volunteer-form"
                 className="block px-3 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg font-medium text-center mx-3 mt-4"
                 onClick={() => setIsOpen(false)}
               >
@@ -198,6 +197,23 @@ export default function Navbar() {
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        .animate-fade-in {
+          animation: fadeIn 0.2s ease-out;
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </nav>
   )
 }
